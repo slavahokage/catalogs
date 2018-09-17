@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block title %}Catalog site{% endblock %}
+{% block body %}
+    <style>
+        img {
+            height: 180px;
+            margin-bottom: 12px;
+        }
+
+        .bottom {
+            margin-bottom: 12px;
+        }
+    </style>
+    <div class="container">
+        <div class="row">
+            {% for p in products %}
+                <div class="col-lg-4 col-sm-6 portfolio-item bottom">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a href="{{ path('category', {'category_slug': p.name}) }}">{{ p.name }}</a>
+                            </h4>
+                            <a href="{{ path('category', {'category_slug': p.name}) }}  "><img class="card-img-top"
+                                             src="{{ p.image }}"
+                                             alt=""></a>
+                            <blockquote class="blockquote text-center">
+                            <p class="card-text">price - {{ p.price }} $</p>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}

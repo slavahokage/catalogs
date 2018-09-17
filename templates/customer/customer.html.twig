@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title %}Catalog site{% endblock %}
+{% block body %}
+    <blockquote class="blockquote text-center">
+        <h1>Feedback information</h1>
+    </blockquote>
+    <div class="container">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+
+    <blockquote class="blockquote text-center">
+        {% if error is defined %}
+            <p class="text-danger">{{ error }}</p>
+        {% endif %}
+
+        {% if success is defined %}
+            <p class="text-success">{{ success }}</p>
+        {% endif %}
+    </blockquote>
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}
