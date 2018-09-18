@@ -1,15 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block title %}Catalog site{% endblock %}
 {% block body %}
-    <style>
-        img {
-            height: 180px;
-        }
-
-        .bottom {
-            margin-bottom: 12px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/maintitle.css') }}">
     <div class="container">
         <div class="row">
             {% for c in categories %}
@@ -29,8 +21,4 @@
             {% endfor %}
         </div>
     </div>
-{% endblock %}
-
-{% block javascripts %}
-
 {% endblock %}
